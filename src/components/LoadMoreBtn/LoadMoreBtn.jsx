@@ -1,7 +1,6 @@
 import css from "./LoadMoreBtn.module.css";
 
-const LoadMoreBtn = ({ setPage }) => {
-  const handleClick = () => setPage((prev) => prev + 1);
+const LoadMoreBtn = ({ handleClick }) => {
   return (
     <div>
       <button onClick={handleClick} className={css.loadMoreBtn}>

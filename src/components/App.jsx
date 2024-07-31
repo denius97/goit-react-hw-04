@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import Modal from "react-modal";
 import "./App.css";
 import ImageGallery from "./ImageGallery/ImageGallery.jsx";
 import { fetchImg } from "../services/api.js";
@@ -49,8 +48,9 @@ function App() {
   const handleOpenModal = (image) => {
     setModalContent(image);
     setModalIsOpen(true);
-    console.log(image);
   };
+
+  const handleLoadMore = () => setPage((prev) => prev + 1);
 
   return (
     <div>
@@ -58,17 +58,8 @@ function App() {
         <ImageModal
           modalIsOpen={modalIsOpen}
           closeModal={() => setModalIsOpen(false)}
-        >
-          <div>
-            <img
-              src={modalContent.urls.regular}
-              alt={modalContent.alt_description}
-            />
-          </div>
-          <p>
-            {`Author: ${modalContent.user.name} | Likes: ${modalContent.likes}`}
-          </p>
-        </ImageModal>
+          modalContent={modalContent}
+        ></ImageModal>
       )}
 
       <SearchBar handleSubmit={handleSubmit} />
@@ -81,7 +72,7 @@ function App() {
       )}
       {isLoading && <Loader />}
       {!isLoading && !isError && page < totalPages && (
-        <LoadMoreBtn setPage={setPage} />
+        <LoadMoreBtn handleClick={handleLoadMore} />
       )}
     </div>
   );
