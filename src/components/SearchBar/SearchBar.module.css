@@ -1,0 +1,30 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgb(10, 81, 212);
+  width: 100%;
+  padding: 10px;
+  z-index: 10;
+
+  label {
+    position: relative;
+  }
+
+  input {
+    font-size: 24px;
+    border-radius: 4px;
+    outline: none;
+    padding-right: 24px;
+    border: none;
+  }
+
+  button {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    background-color: transparent;
+    border: none;
+  }
+}

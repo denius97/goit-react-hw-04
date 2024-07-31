@@ -1,0 +1,36 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modalContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 20px 20px 20px 20px;
+
+  border-radius: 20px;
+
+  background-color: rgb(64, 65, 68);
+
+  img {
+    max-height: 80vh;
+    object-fit: cover;
+  }
+
+  p {
+    color: chocolate;
+    font-size: 18px;
+  }
+}

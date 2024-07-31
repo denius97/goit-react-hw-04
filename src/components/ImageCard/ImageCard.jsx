@@ -1,7 +1,11 @@
-const ImageCard = ({ alt, url }) => {
+const ImageCard = ({ image, clickHandler }) => {
   return (
     <div>
-      <img src={url} alt={alt} />
+      <img
+        src={image.urls.small}
+        alt={image.alt_description}
+        onClick={() => clickHandler(image)}
+      />
     </div>
   );
 };
